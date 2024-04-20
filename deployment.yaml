@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-app
+  labels:
+    app: fastapi-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-app
+  template:
+    metadata:
+      labels:
+        app: fastapi-app
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: fastapi-app
+          image: chandima35687729/your_fastapi_app_image_name:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 8000

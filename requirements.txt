@@ -1,0 +1,7 @@
+fastapi
+pydantic
+diffusers
+mediapy
+google-generativeai
+torch
+gunicorn
